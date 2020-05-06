@@ -81,9 +81,9 @@ if(!empty($_POST['btn_submit'])){
 
             <div class="form-check form-check-inline">
               性別
-              <input class="form-check-input" id="gender1" type="radio" name="gender" value="male">
+              <input class="form-check-input" id="gender1" type="radio" name="gender" value=0>
               <label class="form-check-label"  for="gender1">男性</label>
-              <input class="form-check-input" id="gender2" type="radio" name="gender" value="femail">
+              <input class="form-check-input" id="gender2" type="radio" name="gender" value=1>
               <label class="form-check-label"  for="gender2">女性</label>
             </div>
 
@@ -166,6 +166,10 @@ if(!empty($_POST['btn_submit'])){
 
   <?php if($pageFlag === 2):?>
     <?php if($_POST['csrf'] === $_SESSION['csrfToken']): ?>
+    <?php require'../mainte/insert.php';
+      insertContact($_POST);
+     ?>
+
       送信が完了しました
       <?php unset($_SESSION['csrfToken']); ?>
     <?php endif; ?>
