@@ -4,7 +4,13 @@
     public function echoProduct(){
       echo '親クラスです';
     }
+
+
+  //オーバーライド
+  public function getProduct(){
+    echo '親の関数です';
   }
+}
 //子クラス
   class Product extends BaseProduct{
     //アクセス修飾子、private(外からアプセスできない),protexted(自分、継承したクラス),public(公開)
